@@ -7,6 +7,14 @@ A NodeJS service that receives webhooks from Bootstrap Studio and forwards trans
 - Node.js (v14 or higher)
 - npm
 - A Slant 3D API key
+- A 'skuMap.json' file in the root of the project. This file maps the Bootstrap Studio SKU to the Slant 3D filename and file URL.  See the 'skuMap.json.example' file for the format.
+
+The following environment variables are required:
+
+- `SLANT3D_API_KEY`: Your Slant 3D API key
+- `PORT`: Port number for the service (default: 3000)
+
+These can be set in a `.env` file at the root of the project.  See the `.env.example` file for the format.
 
 ## Installation
 
@@ -63,19 +71,9 @@ Receives webhook data from Bootstrap Studio and forwards it to Slant 3D's API af
 - Success: Returns the Slant 3D API response
 - Error: Returns a 500 status code with error details
 
-## Configuration
-
-The following environment variables are required:
-
-- `SLANT3D_API_KEY`: Your Slant 3D API key
-- `PORT`: Port number for the service (default: 3000)
-
 ## Development
 
 The service uses:
 - Fastify for the web server
-- got for HTTP requests
+- axios for HTTP requests
 - dotenv for environment variable management
-
-To modify the data transformation logic, update the `transformData` function in `src/index.js`.
-
