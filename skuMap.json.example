@@ -1,0 +1,10 @@
+{
+  "123": {
+    "filename": "file1.stl",
+    "fileURL": "www.example.com/file1.stl"  
+  },
+  "456": {
+    "filename": "file2.stl",
+    "fileURL": "www.example.com/file2.stl"
+  }
+}
