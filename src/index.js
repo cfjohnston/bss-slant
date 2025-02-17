@@ -1,10 +1,10 @@
-import dotenv from 'dotenv';
+const dotenv = require('dotenv');
 dotenv.config();
-import Fastify from 'fastify';
+const Fastify = require('fastify');
 const fastify = Fastify({ logger: true });
 
-import skuMap from '../skuMap.json' assert { type: 'json' };
-import axios from 'axios';
+const skuMap = require('../skuMap.json');
+const axios = require('axios');
 
 // Webhook endpoint
 fastify.post('/webhook', async (request, reply) => {

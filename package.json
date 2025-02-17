@@ -3,7 +3,6 @@
   "version": "1.0.0",
   "description": "Bridge service between Bootstrap Studio webhooks and Slant 3D API",
   "main": "src/index.js",
-  "type": "module",
   "scripts": {
     "start": "node src/index.js",
     "dev": "nodemon src/index.js"
