@@ -16,21 +16,23 @@ fastify.post('/webhook', async (request, reply) => {
   }
 });
 
-module.exports = {
-    respondToBSS: async function(bssOrder) {
-        // Transform BSS data to Slant 3D format
-        const slantOrder = transformData(bssOrder);
-        
-        // Send request to Slant 3D
-        const slantResponse = await axios.post(`https://www.slant3dapi.com/api/order`, slantOrder, {
-            headers: {
-            'api-key': `${process.env.SLANT3D_API_KEY}`,
-            'Content-Type': 'application/json'
-            }
-        });
+const respondToBSS = async function(bssOrder) {
+    // Transform BSS data to Slant 3D format
+    const slantOrder = transformData(bssOrder);
+    
+    // Send request to Slant 3D
+    const slantResponse = await axios.post(`https://www.slant3dapi.com/api/order`, slantOrder, {
+        headers: {
+        'api-key': `${process.env.SLANT3D_API_KEY}`,
+        'Content-Type': 'application/json'
+        }
+    });
 
-        return slantResponse.data;
-    },
+    return slantResponse.data;
+}
+
+module.exports = {
+    respondToBSS,
     fastify
 }
 
