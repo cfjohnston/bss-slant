@@ -61,10 +61,9 @@ function transformData(bssOrder) {
   const ship_to_zip = shipping_address.postcode;
 
   const { sku, quantity, name: order_item_name } = line_items[0];
-  const order_item_color = "white";
 
   //map sku to file
-  const { filename, fileURL } = skuMap[sku];
+  const { filename, fileURL, color } = skuMap[sku];
   
   // Transform data to Slant 3D format
   const slantData = {
@@ -90,7 +89,7 @@ function transformData(bssOrder) {
     order_item_name,
     order_quantity: quantity.toString(),
     order_sku: sku,
-    order_item_color,
+    order_item_color: color,
   };
   return slantData;
 }

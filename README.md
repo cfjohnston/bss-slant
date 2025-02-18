@@ -7,7 +7,7 @@ A NodeJS service that receives webhooks from Bootstrap Studio and forwards trans
 - Node.js (v14 or higher)
 - npm
 - A Slant 3D API key
-- A 'skuMap.json' file in the root of the project. This file maps the Bootstrap Studio SKU to the Slant 3D filename and file URL.  See the 'skuMap.json.example' file for the format.
+- A 'skuMap.json' file in the root of the project. This file maps the Bootstrap Studio SKU to the Slant 3D filename, file URL, and color.  See the 'skuMap.json.example' file for the format.
 
 The following environment variables are required:
 
