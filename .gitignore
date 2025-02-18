@@ -1,3 +1,4 @@
 node_modules/
 .env
 skuMap.json
+test/testBssData.json
